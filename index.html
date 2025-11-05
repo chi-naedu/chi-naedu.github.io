@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chinedu Mba| Cloud & DevOps Portfolio</title>
+  <meta name="description" content="Portfolio of Chinedu Mba — Cloud/DevOps Engineer. Projects, skills, and resume." />
+  <style>
+    :root{
+      --bg: #0b0d10;
+      --card: #111418;
+      --text: #e8edf2;
+      --muted: #a9b3be;
+      --accent: #3ecf8e;
+      --accent-2:#6aa3ff;
+      --border: #1a1f25;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --maxw: 1100px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7f8fb; --card:#ffffff; --text:#0b0d10; --muted:#4b5563; --border:#e8ecf1; --shadow:0 10px 25px rgba(0,0,0,.06);} 
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; color:var(--text); background:linear-gradient(180deg, var(--bg), #0a0c0f 40%, var(--bg) 100%); scroll-behavior:smooth;}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--maxw); margin-inline:auto; padding: 24px;}
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(150%) blur(8px); background: color-mix(in oklab, var(--bg) 85%, transparent); border-bottom:1px solid var(--border);}
+    nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px}
+    .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow:0 0 16px color-mix(in oklab, var(--accent) 40%, transparent)}
+    .links a{padding:10px 12px; border-radius:10px; color:var(--muted)}
+    .links a:hover{background:var(--border); color:var(--text)}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; border:1px solid var(--border); background:var(--card); box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0a0c0f; border-color:transparent; font-weight:700}
+    .hero{display:grid; grid-template-columns: 1.1fr .9fr; gap:32px; align-items:center; padding: 40px 0}
+    @media (max-width: 880px){.hero{grid-template-columns:1fr;}}
+    .headline{font-size: clamp(28px, 4vw, 44px); line-height:1.15; margin: 4px 0 10px}
+    .kicker{color:var(--accent); font-weight:700; letter-spacing:.4px}
+    .lede{color:var(--muted); max-width: 65ch}
+    .stack{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px}
+    .chip{padding:8px 12px; border:1px solid var(--border); border-radius:999px; background:color-mix(in oklab, var(--card) 70%, transparent)}
+    .avatar-wrap{display:grid; place-items:center}
+    .avatar{width:min(280px, 80%); aspect-ratio:1; border-radius:50%; background: radial-gradient(120px 120px at 30% 30%, color-mix(in oklab, var(--accent) 40%, transparent), transparent), radial-gradient(200px 200px at 70% 70%, color-mix(in oklab, var(--accent-2) 40%, transparent), transparent); padding:6px; border:1px solid var(--border); box-shadow: var(--shadow); overflow:hidden;}
+    .avatar img{width:100%; height:100%; object-fit:cover; display:block; border-radius:50%}
+    section{padding: 18px 0 28px; scroll-margin-top: 96px}
+    h2{font-size: clamp(22px, 2.6vw, 30px); margin: 8px 0 6px}
+    .muted{color:var(--muted)}
+    .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:18px}
+    .card{grid-column: span 6; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .card h3{margin:6px 0 8px}
+    .card p{margin:0}
+    .card .meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .tag{font-size:13px; padding:6px 10px; border-radius:999px; background:color-mix(in oklab, var(--border) 35%, transparent); border:1px solid var(--border); color:var(--muted)}
+    .card .actions{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap}
+    @media (max-width: 880px){.card{grid-column: span 12}}
+    .twocol{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    @media (max-width: 880px){.twocol{grid-template-columns:1fr}}
+    footer{border-top:1px solid var(--border); margin-top:40px}
+    .foot{display:flex; justify-content:space-between; align-items:center; gap:12px; padding: 14px 0; color:var(--muted)}
+    .links a.active{color:var(--text); background:var(--border)}
+    .menu-btn{display:none; border:1px solid var(--border); background:var(--card); color:var(--text); padding:10px 12px; border-radius:10px}
+    @media (max-width: 880px){.links{position:absolute; right:24px; top:64px; background:var(--card); border:1px solid var(--border); border-radius:14px; padding:8px; box-shadow:var(--shadow); display:none; flex-direction:column; width:min(280px, 80vw)}.links.open{display:flex}.menu-btn{display:inline-flex; align-items:center; gap:8px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Primary">
+        <div class="brand"><span class="dot" aria-hidden="true"></span><a href="#home" class="logo">Chinedu Mba</a></div>
+        <button class="menu-btn" aria-expanded="false" aria-controls="primary-links" aria-label="Toggle menu">Menu ▾</button>
+        <div id="primary-links" class="links" role="navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero" aria-labelledby="intro-title">
+      <div>
+        <p class="kicker">Cloud • DevOps • Automation</p>
+        <h1 id="intro-title" class="headline">Chinedu Ituma Mba</h1>
+        <p class="lede">I am a budding Cloud/DevOps Engineer with a strong background in cloud architecture, networking, computing, storage, security, and monitoring. Proficient in provisioning, maintaining, and monitoring cloud infrastructure while also skilled in automation, serverless computing, and incident management.</p>
+        <div class="stack" aria-label="Primary actions">
+          <a class="btn primary" href="#resume">View Resume</a>
+          <a class="btn" href="#projects">See Projects</a>
+        </div>
+        <div class="stack" style="margin-top:14px">
+          <span class="chip">Available for roles</span>
+          <span class="chip">Open to freelance</span>
+        </div>
+      </div>
+      <div class="avatar-wrap">
+        <figure class="avatar" aria-label="Your profile photo">
+          <img src="https://my-tf-cm-bucket.s3.eu-west-1.amazonaws.com/IMG_6679.jpeg" alt="Portrait of Chinedu" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <div class="twocol" style="margin-top:10px">
+        <div class="card">
+          <h3>Highlights</h3>
+          <ul>
+            <li>Deployed & monitored highly available and secure production‑grade 3‑tier web app infrastructure using Iac tools.</li>
+            <li>Built and Deployed a Bedrock RAG chatbot on AWS.</li>
+            <li>Built, Deployed and Monitored a 3-Tier DevOps CI/CD pipeline.</li>
+            <li>Kept critial systems online and High throughput incident solver.</li>
+          </ul>
+        </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <div class="stack">
+        <span class="chip">Cloud - AWS, Azure</span>
+        <span class="chip">IaC - Terraform, CloudFormation</span>
+        <span class="chip">Linux</span>
+        <span class="chip">CI/CD</span>
+        <span class="chip">Git</span>
+        <span class="chip">Docker</span>
+        <span class="chip">Kubernetes</span>
+        <span class="chip">Ansible</span>
+        <span class="chip">Jenkins</span>
+        <span class="chip">CodePipeline</span>
+        <span class="chip">Python</span>
+        <span class="chip">Bash</span>
+        <span class="chip">CloudWatch</span>
+        <span class="chip">ELK</span>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="grid">
+        <article class="card" aria-labelledby="p1-title">
+          <h3 id="p1-title">Production 3‑Tier Highly Available Web Server</h3>
+          <p class="muted">Highly available 3-tier architecture stack with VPC, ALB, Auto Scaling, EC2, RDS using Terraform.</p>
+          <div class="meta"><span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">CloudWatch</span></div>
+          <div class="actions">
+            <a class="btn" href="https://github.com/chi-naedu/high_availabilty_with_terraform.git">GitHub Repo</a>
+            <!-- <a class="btn" href="#">Medium Article</a> -->
+          </div>
+        </article>
+        <article class="card" aria-labelledby="p2-title">
+          <h3 id="p2-title">RAG Chatbot on Bedrock</h3>
+          <p class="muted">Retrieval Augmented Generated (RAG) Serverless chatbot using Bedrock, Lambda, API Gateway, and S3.</p>
+          <div class="meta"><span class="tag">AWS</span><span class="tag">Lambda</span><span class="tag">API Gateway</span><span class="tag">S3</span></div>
+          <div class="actions">
+            <a class="btn" href="https://github.com/chi-naedu/RAGChatBot.git">GitHub Repo</a>
+            <a class="btn" href="https://medium.com/@chi.naedu/aws-bedrock-rag-chatbot-we-taught-the-cloud-to-talk-devops-f9be2af47bc4">Medium Article</a>
+          </div>
+        </article>
+        <article class="card" aria-labelledby="p3-title">
+            <h3 id="p3-title">3-Tier DevOps CI/CD Pipeline</h3>
+          <p class="muted">Production-style 3-Tier CI/CD Pipeline that automates deploying a full-stack application with distinct layers using Terraform, Docker, AWS ECR, AWS ECS, AWS CodePipeline.</p>
+          <div class="meta"><span class="tag">CI/CD</span><span class="tag">Git</span><span class="tag">IaC</span><span class="tag">Containerization</span><span class="tag">AWS</span></div>
+          <div class="actions">
+            <a class="btn" href="https://github.com/chi-naedu/3tierDevOpsCICD.git">GitHub Repo</a>
+            <!-- <a class="btn" href="#">Medium Article</a> -->
+          </div>
+        </article>
+        <article class="card" aria-labelledby="p4-title">
+          <h3 id="p4-title">Cloud Storage Provision Automation</h3>
+          <p class="muted">Automated cloud storage provision using Jenkins, Terraform and S3.</p>
+          <div class="meta"><span class="tag">Jenkins</span><span class="tag">Git</span><span class="tag">AWS</span></div>
+          <div class="actions">
+            <a class="btn" href="https://github.com/chi-naedu/S3bucket_terraform_jenkins.git">GitHub Repo</a>
+            <!-- <a class="btn" href="#">Medium Article</a> -->
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="resume" aria-labelledby="resume-title">
+      <h2 id="resume-title">Resume</h2>
+      <div class="card">
+        <div class="actions">
+          <a class="btn" href="https://my-tf-cm-bucket.s3.eu-west-1.amazonaws.com/Cloud+CV.pdf" download>CV</a>
+          <a class="btn" href="https://medium.com/@chi.naedu">Medium</a>
+          <a class="btn" href="https://github.com/chi-naedu">GitHub</a>
+        </div>
+    </section>
+    <section id="resume" aria-labelledby="resume-title">
+      <h2 id="resume-title">Education and Certification</h2>
+        <div class="meta" style="margin-top:12px">
+          <span class="tag">BSc Computer Science</span>
+          <span class="tag">MSc Cloud Computing</span>
+          <span class="tag">Microsoft Certified : Azure Fundamentals AZ‑900</span>
+          <span class="tag">Microsoft Certified : Azure Data Fundamentals DP‑900</span>
+          <span class="tag">AWS Solutions Architect Associate (in view)</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <div class="twocol">
+        <div class="card">
+          <h3>Get in touch</h3>
+          <p>Email: <a href="mailto:chineduituma1@gmail.com">chineduituma1@gmail.com</a></p>
+          <p>Location: United Kingdom</p>
+          <div class="actions">
+            <a class="btn" href="https://www.linkedin.com/in/chinedu-m-22b117176/">LinkedIn</a>
+            <a class="btn" href="https://www.upwork.com/freelancers/~018b2445632cc20cf3">Upwork</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Quick note</h3>
+          <p class="muted">Prefer email? Use the button below and I’ll get back to you.</p>
+          <a class="btn primary" href="mailto:chineduituma1@gmail.com?subject=Hello%20from%20your%20portfolio">Email me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <span>© <span id="y"></span> Chinedu Mba. All rights reserved.</span>
+      <a class="muted" href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const links = document.getElementById('primary-links');
+    if (menuBtn && links){
+      menuBtn.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', String(open));
+      });
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        links.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }));
+    }
+
+    // Scrollspy (auto-active nav link) — detect all sections dynamically
+    const sections = Array.from(document.querySelectorAll('main section[id]'));
+    const linkMap = new Map();
+    document.querySelectorAll('#primary-links a').forEach(a => linkMap.set(a.getAttribute('href').slice(1), a));
+
+    const activate = id => {
+      document.querySelectorAll('#primary-links a').forEach(a => a.classList.remove('active'));
+      const link = linkMap.get(id);
+      if (link) link.classList.add('active');
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          activate(entry.target.id);
+        }
+      });
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.05 });
+
+    sections.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
